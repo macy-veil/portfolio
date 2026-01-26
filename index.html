@@ -573,6 +573,27 @@
   transform: none;
 }
 
+    .status-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    vertical-align: middle;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.status-discontinued {
+    background-color: #ff3b30;
+}
+
+.status-completed {
+    background-color: #34c759;
+}
+
+.status-planning {
+    background-color: #ff9500;
+      }
+
   </style>
 </head>
 
@@ -652,7 +673,7 @@ Hi! I'm Macy Veil, a Brazil-based Screenwriter.</p>
             </div>
 
             <div class="project-meta">Pilot Screenplay · 2025 · 25 Pages</div>
-            <div class="project-status">Status: Discontinued</div>
+            <div class="project-status">Status: <span class="status-dot status-discontinued"></span> Discontinued</div>
             <a href="https://drive.google.com/file/d/14gjwVIYiM5vt2KqG9scYxjwOdIrXW76s/view?usp=drivesdk" class="download-btn">Download Screenplay</a>
           </div>
 
@@ -670,7 +691,7 @@ Hi! I'm Macy Veil, a Brazil-based Screenwriter.</p>
             </div>
 
             <div class="project-meta">Short Film · 2025 · 11 Pages (Screenplay) · 29 Pages (Lookbook)</div>
-            <div class="project-status">Status: Completed</div>
+            <div class="project-status">Status: <span class="status-dot status-completed"></span> Completed</div>
             <a href="https://drive.google.com/drive/folders/1dpzPLm2v-lfRNJ_seSuzG3bQGjq-Vx0n" class="download-btn">Download Screenplay & Lookbook</a>
           </div>
 
@@ -688,7 +709,7 @@ Hi! I'm Macy Veil, a Brazil-based Screenwriter.</p>
             </div>
 
             <div class="project-meta">Short Film · 2026</div>
-            <div class="project-status">Status: In Development (Screenplay)</div>
+            <div class="project-status">Status: <span class="status-dot status-planning"></span> In Development (Screenplay)</div>
           </div>
 
           <div class="project-item"></div>
