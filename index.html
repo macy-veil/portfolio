@@ -384,11 +384,11 @@
     .project-details {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 1s cubic-bezier(0.16, 1, 0.3, 1), 
-                opacity 0.5s ease-in-out,
-                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
     transform: translateY(-10px);
+    transition: max-height 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.7s ease-in-out,
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-details.expanded {
@@ -396,6 +396,15 @@
     opacity: 1;
     margin-bottom: 2rem;
     transform: translateY(0);
+    transition: max-height 3.0s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.6s ease-in-out 0.1s,
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-details:not(.expanded) {
+    transition: max-height 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                opacity 0.6s ease-in-out,
+                transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .project-details-content {
@@ -467,8 +476,8 @@
 .project-details-content * {
     position: relative;
     z-index: 2;
-  }
-
+}
+    
     .project-genres {
       font-family: 'IBM Plex Mono', Monospace;
       font-size: 13px;
