@@ -265,8 +265,10 @@
     }
 
     .hero-title:hover {
-      color: #1a1a1a;
+      color: black;
       transform: scale(1.02);
+      letter-spacing: 0.04em;
+      transition: all 0.3s ease-in-out;
     }
 
     .subtitle {
@@ -362,7 +364,9 @@
 
     .expand-arrow:hover {
       color: #000000;
-    }
+      transform: scale(1.2);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
 
     .project-details {
       max-height: 0;
@@ -391,8 +395,8 @@
 }
 
     .project-genres {
-      font-family: 'Roboto Mono', Monospace;
-      font-size: 11px;
+      font-family: 'IBM Plex Mono', Monospace;
+      font-size: 13px;
       color: #767676;
       margin-bottom: 1rem;
     }
@@ -427,7 +431,7 @@
   
   padding: 0.85rem 1.6rem;
   
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', Monospace;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
