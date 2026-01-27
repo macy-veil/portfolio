@@ -223,7 +223,7 @@
 
     .about::after {
   display: none;
-}
+    }
 
     .projects::before {
   content: '';
@@ -288,6 +288,11 @@
       letter-spacing: 0.02em;
       color: #000000;
       text-transform: uppercase;
+    }
+
+    .about {
+  padding: 4rem 2rem !important;
+  margin: 0 !important;
     }
 
     .about-content {
@@ -377,30 +382,92 @@
   }
 
     .project-details {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out;
-      opacity: 0;
-    }
-
-    .project-details.expanded {
-      max-height: 500px;
-      opacity: 1;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-details-content {
-  background: rgba(255, 255, 255, 0.4);
-  padding: 1.6rem;
-  border-radius: 35px;
-  margin-top: 1rem;
-  text-align: left;
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  
-  border: 1px solid rgba(255, 255, 255, 0.6);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.5s ease-in-out,
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateY(-10px);
 }
+
+.project-details.expanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-bottom: 2rem;
+    transform: translateY(0);
+}
+
+.project-details-content {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    
+    padding: 2rem;
+    border-radius: 24px;
+    margin-top: 1.2rem;
+    text-align: left;
+    position: relative;
+    
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.7);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.6);
+    
+    position: relative;
+    overflow: hidden;
+}
+
+.project-details-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.6) 20%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0.6) 80%,
+        transparent
+    );
+    z-index: 1;
+}
+
+.project-details-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: skewX(-15deg);
+    transition: left 0.7s ease;
+}
+
+.project-details-content:hover::after {
+    left: 150%;
+}
+
+.project-details-content * {
+    position: relative;
+    z-index: 2;
+  }
 
     .project-genres {
       font-family: 'IBM Plex Mono', Monospace;
@@ -648,13 +715,13 @@
       <p class="reveal reveal-delay-1">
 Hi! I'm Macy Veil, a Brazil-based Screenwriter.</p>
 
-<p class="reveal reveal-delay-2">My work focuses on philosophical science fiction, dystopian narratives, psychological drama, and surreal horror. I prioritize visual storytelling and immersive experiences—using sound design, natural environments, distant human presence, and worldbuilding to construct deeply atmospheric narratives.</p>
+<p class="reveal reveal-delay-2">My work focuses on philosophical science fiction, dystopian narratives, psychological drama, and surreal horror. I prioritize visual storytelling and immersive experiences — using sound design, natural environments, distant human presence, and worldbuilding to construct deeply atmospheric narratives.</p>
 
 <p class="reveal reveal-delay-3">
 <strong>Inspirations:</strong> My work is influenced by Kubrick's ambition and Denis Villeneuve's emotional restraint. I'm drawn to subverting expectations, allowing meaning to emerge gradually rather than through explicit exposition.</p>
 
 <p class="reveal reveal-delay-4">
-<strong>Vision:</strong> I aim to explore bold narrative structures and develop a distinct cinematic language that treats atmosphere, scale, and perception as narrative forces. I approach writing by fully imagining and feeling each scene before committing it to the page—prioritizing clarity, immersion, and intuitive visual flow.</p>
+<strong>Vision:</strong> I aim to explore bold narrative structures and develop a distinct cinematic language that treats atmosphere, scale, and perception as narrative forces. I approach writing by fully imagining and feeling each scene before committing it to the page — prioritizing clarity, immersion, and intuitive visual flow.</p>
 
 <p class="reveal reveal-delay-5">
   Open to international productions and collaboration with directors who prioritize atmosphere and visual restraint.</p>
@@ -698,7 +765,7 @@ Hi! I'm Macy Veil, a Brazil-based Screenwriter.</p>
             <div class="project-details" id="details2">
               <div class="project-details-content">
                 <p class="project-genres">Genres: Philosophical Science Fiction; Existential Sci-Fi; Speculative Fiction; Atmospheric Sci-Fi Horror.</p>
-                <p class="project-logline">Logline: When seven silent Obelisks descend upon Earth bearing a lethal, unreadable truth, humanity’s obsession with meaning fractures civilization—revealing that the true catastrophe is not their arrival, but our response to the unknowable.</p>
+                <p class="project-logline">Logline: When seven silent Obelisks descend upon Earth bearing a lethal, unreadable truth, humanity’s obsession with meaning fractures civilization — revealing that the true catastrophe is not their arrival, but our response to the unknowable.</p>
               </div>
             </div>
 
@@ -716,7 +783,7 @@ Hi! I'm Macy Veil, a Brazil-based Screenwriter.</p>
             <div class="project-details" id="details3">
               <div class="project-details-content">
                 <p class="project-genres">Genres: Psychological Drama; Dystopian; Surrealist Fiction.</p>
-                <p class="project-logline">Logline: In a peripheral district of a vast city where herbivores and carnivores coexist, a lonely black cat mechanic becomes obsessed with the idea of being loved—unaware that a silent presence has been following him all along.</p>
+                <p class="project-logline">Logline: In a peripheral district of a vast city where herbivores and carnivores coexist, a lonely black cat mechanic becomes obsessed with the idea of being loved — unaware that a silent presence has been following him all along.</p>
               </div>
             </div>
 
