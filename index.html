@@ -602,36 +602,138 @@
   transform: translateY(2px);
 }
 
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      background-color: black;
+    /* ===== CONTACT SECTION (FROM FILE 2) ===== */
+    .contact-section {
       color: white;
-      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+      background: transparent;
+      padding: 10rem 0 !important;
+      position: relative;
     }
 
-    .contact {
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('des1.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+    
+    .contact-section .container {
+  padding: 0 2rem;
+}
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 4rem;
+    }
+
+    .contact-section h2 {
+      font-family: 'Roboto Mono', Monospace;
+      color: white;
+      text-align: left;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 2rem;
+      grid-column: 1 / -1;
+    }
+
+    .footer-column {
+      text-align: left;
+    }
+
+    .footer-title {
+      font-size: 0.875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      color: white;
+      font-weight: 400;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.25rem;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      opacity: 0.7;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-platforms {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .contact-platforms a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.25rem;
+      transition: opacity 0.3s ease;
+      display: block;
+    }
+
+    .contact-platforms a:hover {
+      opacity: 0.7;
+    }
+
+    .name-copyright {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .name-copyright .name {
+      font-size: 60px;
+      color: white;
       margin-bottom: 2rem;
     }
 
-    .contact a {
-      color: #c8c8c8;
-      text-decoration: none;
-      margin: 0 1.5rem;
-      font-size: 15px;
-      letter-spacing: 0.05em;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .contact a:hover {
-      color: #666666;
-    }
-
-    .copyright {
-      font-size: 12px;
-      color: #999999;
+    .name-copyright .copyright {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
       letter-spacing: 0.05em;
     }
+
+@media (max-width: 700px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+
+  .contact-section .container {
+    padding: 0 1.5rem;
+  }
+}
 
     .spacer {
   height: 6px;
@@ -829,13 +931,37 @@ Hi! I'm Macy Veil, a Brazil-based Screenwriter.</p>
 
     <div class="spacer-footer"></div>
 
-    <footer id="contact">
-  <div class="contact reveal">
-    <a href="mailto:blackbox.macy@gmail.com">E-MAIL</a>
-    <a href="https://www.linkedin.com/in/macy-veil?trk=contact-info">LINKEDIN</a>
+    <!-- REPLACED FOOTER WITH CONTACT SECTION FROM FILE 2 -->
+    <section id="contact" class="contact-section">
+  <div class="container">
+    <div class="footer-grid">
+      <h2 class="reveal">Think. Feel. Write.<br><br>Authorial storytelling across genres and forms.</h2>
+      
+      <div class="footer-column">
+        <h3 class="footer-title reveal">NAVIGATE</h3>
+        <div class="footer-links">
+          <a href="#about" class="reveal reveal-delay-1">About</a>
+          <a href="#projects" class="reveal reveal-delay-2">Projects</a>
+          <a href="#contact" class="reveal reveal-delay-3">Contact</a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3 class="footer-title reveal reveal-delay-1">CONNECT</h3>
+        <div class="contact-info">
+          <div class="contact-platforms">
+            <a href="mailto:blackbox.macy@gmail.com" class="reveal reveal-delay-2">Email</a>
+            <a href="https://www.linkedin.com/in/macy-veil" class="reveal reveal-delay-3">LinkedIn</a>
+          </div>
+          <div class="name-copyright">
+            <h2 class="name reveal reveal-delay-4">Macy Veil</h2>
+            <p class="copyright reveal reveal-delay-5" id="copyright"></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <p class="copyright reveal reveal-delay-1" id="copyright"></p>
-</footer>
+</section>
   </main>
 
   <script>
