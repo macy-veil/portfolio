@@ -602,7 +602,7 @@
   transform: translateY(2px);
 }
 
-    /* ===== CONTACT SECTION (FROM FILE 2) ===== */
+        /* ===== CONTACT SECTION ===== */
     .contact-section {
       color: white;
       background: transparent;
@@ -627,8 +627,8 @@
     }
     
     .contact-section .container {
-  padding: 0 2rem;
-}
+      padding: 0 2rem;
+    }
 
     .footer-grid {
       display: grid;
@@ -650,6 +650,18 @@
 
     .footer-column {
       text-align: left;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .footer-column::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: #F2F2F2;
     }
 
     .footer-title {
@@ -659,12 +671,14 @@
       margin-bottom: 1.5rem;
       color: white;
       font-weight: 400;
+      padding-left: 0.5rem;
     }
 
     .footer-links {
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
+      padding-left: 0.5rem;
     }
 
     .footer-links a {
@@ -678,47 +692,37 @@
       opacity: 0.7;
     }
 
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .contact-platforms {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .contact-platforms a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.25rem;
-      transition: opacity 0.3s ease;
-      display: block;
-    }
-
-    .contact-platforms a:hover {
-      opacity: 0.7;
-    }
-
     .name-copyright {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 4rem;
+  padding-top: 0;
+  text-align: left;
+}
 
-    .name-copyright .name {
-      font-size: 60px;
-      color: white;
-      margin-bottom: 2rem;
-    }
+.name-copyright .name {
+  font-size: 60px;
+  color: white;
+  text-align: left;
+  margin: 0;
+}
 
-    .name-copyright .copyright {
-      font-size: 0.875rem;
-      color: rgba(255, 255, 255, 0.7);
-      letter-spacing: 0.05em;
-    }
+.name-copyright .copyright {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.05em;
+  text-align: left;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.contact-section .container {
+  padding: 0 2rem;
+  max-width: 800px;
+  margin: 0;
+  width: 100%;
+}
 
 @media (max-width: 700px) {
   .footer-grid {
@@ -732,6 +736,18 @@
 
   .contact-section .container {
     padding: 0 1.5rem;
+  }
+
+  .footer-column {
+    padding-left: 1.2rem;
+  }
+  
+  .footer-title {
+    padding-left: 0.5rem;
+  }
+  
+  .footer-links {
+    padding-left: 0.5rem;
   }
 }
 
@@ -778,6 +794,7 @@
 .reveal-delay-3 { transition-delay: 0.6s; }
 .reveal-delay-4 { transition-delay: 0.8s; }
 .reveal-delay-5 { transition-delay: 1.0s; }
+.reveal-delay-5 { transition-delay: 1.2s; }
 
 .hero .hero-title,
     .hero .subtitle {
@@ -932,37 +949,36 @@ Hi! I'm Macy Veil, a Brazil-based Screenwriter.</p>
     <div class="spacer-footer"></div>
 
     <!-- REPLACED FOOTER WITH CONTACT SECTION FROM FILE 2 -->
-    <section id="contact" class="contact-section">
+      <section id="contact" class="contact-section">
   <div class="container">
     <div class="footer-grid">
       <h2 class="reveal">Think. Feel. Write.<br><br>Authorial storytelling across genres and forms.</h2>
       
-      <div class="footer-column">
+      <div class="footer-column reveal reveal-delay-1">
         <h3 class="footer-title reveal">NAVIGATE</h3>
         <div class="footer-links">
-          <a href="#about" class="reveal reveal-delay-1">About</a>
-          <a href="#projects" class="reveal reveal-delay-2">Projects</a>
-          <a href="#contact" class="reveal reveal-delay-3">Contact</a>
+          <a href="#about" class="reveal reveal-delay-2">About</a>
+          <a href="#projects" class="reveal reveal-delay-3">Projects</a>
+          <a href="#contact" class="reveal reveal-delay-4">Contact</a>
         </div>
       </div>
       
-      <div class="footer-column">
-        <h3 class="footer-title reveal reveal-delay-1">CONNECT</h3>
-        <div class="contact-info">
-          <div class="contact-platforms">
-            <a href="mailto:blackbox.macy@gmail.com" class="reveal reveal-delay-2">Email</a>
-            <a href="https://www.linkedin.com/in/macy-veil" class="reveal reveal-delay-3">LinkedIn</a>
-          </div>
-          <div class="name-copyright">
-            <h2 class="name reveal reveal-delay-4">Macy Veil</h2>
-            <p class="copyright reveal reveal-delay-5" id="copyright"></p>
-          </div>
+      <div class="footer-column reveal reveal-delay-1">
+        <h3 class="footer-title reveal reveal-delay-2">CONNECT</h3>
+        <div class="footer-links">
+          <a href="mailto:blackbox.macy@gmail.com" class="reveal reveal-delay-3">Email</a>
+          <a href="https://www.linkedin.com/in/macy-veil" class="reveal reveal-delay-4">LinkedIn</a>
         </div>
       </div>
     </div>
+    
+    <div class="name-copyright">
+      <h2 class="name reveal reveal-delay-1">Macy Veil</h2>
+      <p class="copyright reveal reveal-delay-2" id="copyright"></p>
+    </div>
   </div>
 </section>
-  </main>
+</main>
 
   <script>
     const menuBtn = document.getElementById('menuBtn');
