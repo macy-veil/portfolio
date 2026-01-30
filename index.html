@@ -266,12 +266,18 @@
     }
 
     .hero {
+      background-image:
+      linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),url('des2.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 4rem 2rem;
+      position: relative;
     }
     
     .hero-title {
@@ -279,24 +285,26 @@
       font-family: "Anton";
       font-size: 150px;
       line-height: 1.1;
-      color: black;
+      color: #dddddd;
       margin-bottom: 2rem;
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-title:hover {
-      color: black;
+      color: #dddddd;
       transform: scale(1.02);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.09em;
       transition: all 0.3s ease-in-out;
     }
 
     .subtitle {
-      font-size: 16px;
+      font-size: 19px;
       font-weight: 300;
-      color: #666666;
+      color: #dddddd;
       letter-spacing: 0.05em;
     }
 
