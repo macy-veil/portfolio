@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Macy Veil</title>
-  
+
   <meta name="description" content="Macy Veil is a screenwriter developing philosophical science fiction, dystopian narratives, and psychological drama, with a strong focus on atmosphere, visual storytelling, and immersive worldbuilding.">
 <meta name="author" content="Macy Veil">
   <meta name="google-site-verification" content="PCoyvC11kRuzAAdpow2QhwHYpu0-WtZOWj4mllm8xQ8"/>
@@ -16,17 +16,18 @@
 
   <link rel="shortcut icon" href="/portfolio/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_downward,mail">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-  
+
   <style>
     * {
       margin: 0;
@@ -41,83 +42,84 @@
       font-size: 19px;
       line-height: 1.6;
     }
+    
+    body.form-open {
+      overflow: hidden;
+      background-color: #f5f0e6;
+    }
 
     ::selection {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: #000000;
-  text-shadow: none;
-}
+      background-color: rgba(0, 0, 0, 0.2);
+      color: #000000;
+      text-shadow: none;
+    }
 
-::-moz-selection {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: #000000;
-  text-shadow: none;
-}
+    ::-moz-selection {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: #000000;
+      text-shadow: none;
+    }
 
     .a2 {
-  color: #000000 !important;
-  border-bottom-color: #000000 !important;
-}
+      color: #000000 !important;
+      border-bottom-color: #000000 !important;
+    }
 
-.a2:hover {
-  color: #444444 !important;
-  border-bottom-color: #444444 !important;
-}
+    .a2:hover {
+      color: #444444 !important;
+      border-bottom-color: #444444 !important;
+    }
 
     .menu-background-blur {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  z-index: 999;
-  pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      z-index: 999;
+      pointer-events: none;
+      background: 
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.30) 0%,
+          rgba(0, 0, 0, 0.20) 30%,
+          rgba(0, 0, 0, 0.10) 60%,
+          transparent 100%
+        );
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: none;
+      box-shadow: none;
+      opacity: 0.98;
+      mask: linear-gradient(
+        to bottom,
+        black 0%,
+        black 70%,
+        transparent 100%
+      );
+      -webkit-mask: linear-gradient(
+        to bottom,
+        black 0%,
+        black 60%,
+        transparent 100%
+      );
+    }
 
-  background: 
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.30) 0%,
-      rgba(0, 0, 0, 0.20) 30%,
-      rgba(0, 0, 0, 0.10) 60%,
-      transparent 100%
-    );
-
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
-  border: none;
-  box-shadow: none;
-  opacity: 0.98;
-
-  mask: linear-gradient(
-    to bottom,
-    black 0%,
-    black 70%,
-    transparent 100%,
-  );
-  -webkit-mask: linear-gradient(
-    to bottom,
-    black 0%,
-    black 60%,
-    transparent 100%
-  );
-}
-
-   .menu-background-blur::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    transparent 100%
-  );
-  z-index: 1000;
-  }
+    .menu-background-blur::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%
+      );
+      z-index: 1000;
+    }
 
     .menu-btn {
       position: fixed;
@@ -244,43 +246,43 @@
     }
 
     section {
-  background-color: #f0f0f0;
-  margin: 0 auto 0;
-  padding: 10rem 2rem;
-  position: relative;
-}
+      background-color: #f0f0f0;
+      margin: 0 auto 0;
+      padding: 10rem 2rem;
+      position: relative;
+    }
 
     section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, 
-    rgba(0, 0, 0, 0) 0%, 
-    rgba(0, 0, 0, 0.010) 50%,
-    rgba(0, 0, 0, 0.100) 100%);
-  pointer-events: none;
-}
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.010) 50%,
+        rgba(0, 0, 0, 0.100) 100%);
+      pointer-events: none;
+    }
 
     .about::after {
-  display: none;
+      display: none;
     }
 
     .projects::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(to top, 
-    rgba(0, 0, 0, 0) 0%, 
-    rgba(0, 0, 0, 0.010) 50%,
-    rgba(0, 0, 0, 0.100) 100%);
-  pointer-events: none;
-}
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.010) 50%,
+        rgba(0, 0, 0, 0.100) 100%);
+      pointer-events: none;
+    }
 
     .container {
       max-width: 800px;
@@ -307,7 +309,7 @@
       font-family: "Anton";
       font-size: 150px;
       line-height: 1.1;
-      color: #dddddd;
+      color: white;
       margin-bottom: 2rem;
       text-transform: uppercase;
       cursor: pointer;
@@ -315,21 +317,21 @@
       position: relative;
       z-index: 2;
       user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .hero-title:hover {
-      color: #dddddd;
+      color: white;
       transform: scale(1.02);
       letter-spacing: 0.09em;
       transition: all 0.3s ease-in-out;
       user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
     }
 
     .subtitle {
@@ -339,8 +341,8 @@
       letter-spacing: 0.05em;
     }
 
-     h2 {
-       font-family: 'Roboto Mono', Monospace;
+    h2 {
+      font-family: 'Roboto Mono', Monospace;
       font-size: clamp(40px, 8vw, 72px);
       font-weight: 400;
       text-align: center;
@@ -350,9 +352,24 @@
       text-transform: uppercase;
     }
 
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  -webkit-font-smoothing: antialiased;
+}
     .about {
-  padding: 4rem 2rem !important;
-  margin: 0 !important;
+      padding: 4rem 2rem !important;
+      margin: 0 !important;
     }
 
     .about-content {
@@ -433,127 +450,121 @@
       color: #000000;
       transform: scale(1.2);
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
+    }
 
-   .expand-arrow.rotated:hover {
-     transform: rotate(180deg) scale(1.2);
-     color: #000000;
-     text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
+    .expand-arrow.rotated:hover {
+      transform: rotate(180deg) scale(1.2);
+      color: #000000;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
     .project-details {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: max-height 1s cubic-bezier(0.16, 1, 0.3, 1), 
-                opacity 0.7s ease-in-out,
-                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: max-height 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                  opacity 0.7s ease-in-out,
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-.project-details.expanded {
-    max-height: 500px;
-    opacity: 1;
-    margin-bottom: 2rem;
-    transform: translateY(0);
-    transition: max-height 3.0s cubic-bezier(0.16, 1, 0.3, 1), 
-                opacity 0.6s ease-in-out 0.1s,
-                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
+    .project-details.expanded {
+      max-height: 500px;
+      opacity: 1;
+      margin-bottom: 2rem;
+      transform: translateY(0);
+      transition: max-height 3.0s cubic-bezier(0.16, 1, 0.3, 1), 
+                  opacity 0.6s ease-in-out 0.1s,
+                  transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-.project-details:not(.expanded) {
-    transition: max-height 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                opacity 0.6s ease-in-out,
-                transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
+    .project-details:not(.expanded) {
+      transition: max-height 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  opacity 0.6s ease-in-out,
+                  transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
 
-.project-details-content {
-    background: linear-gradient(
+    .project-details-content {
+      background: linear-gradient(
         135deg,
         rgba(255, 255, 255, 0.25) 0%,
         rgba(255, 255, 255, 0.15) 50%,
         rgba(255, 255, 255, 0.05) 100%
-    );
-    
-    padding: 2rem;
-    border-radius: 35px;
-    margin-top: 1.2rem;
-    text-align: left;
-    position: relative;
-    
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    
-    border: 1.6px solid rgba(255, 255, 255, 0.4);
-    border-top: 1.9px solid rgba(255, 255, 255, 0.7);
-    border-left: 1.5px solid rgba(255, 255, 255, 0.6);
-    
-    position: relative;
-    overflow: hidden;
-}
+      );
+      padding: 2rem;
+      border-radius: 35px;
+      margin-top: 1.2rem;
+      text-align: left;
+      position: relative;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1.6px solid rgba(255, 255, 255, 0.4);
+      border-top: 1.9px solid rgba(255, 255, 255, 0.7);
+      border-left: 1.5px solid rgba(255, 255, 255, 0.6);
+      overflow: hidden;
+    }
 
-.project-details-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
+    .project-details-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
         90deg,
         transparent,
         rgba(255, 255, 255, 0.6) 20%,
         rgba(255, 255, 255, 0.8) 50%,
         rgba(255, 255, 255, 0.6) 80%,
         transparent
-    );
-    z-index: 1;
-}
+      );
+      z-index: 1;
+    }
 
-.project-details-content::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
+    .project-details-content::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
         90deg,
         transparent,
         rgba(255, 255, 255, 0.1),
         rgba(255, 255, 255, 0.2),
         rgba(255, 255, 255, 0.1),
         transparent
-    );
-    transform: skewX(-15deg);
-    transition: left 0.7s ease;
-}
+      );
+      transform: skewX(-15deg);
+      transition: left 0.7s ease;
+    }
 
-.project-details-content:hover::after {
-    left: 150%;
-}
+    .project-details-content:hover::after {
+      left: 150%;
+    }
 
-.project-details-content * {
-    position: relative;
-    z-index: 2;
-}
+    .project-details-content * {
+      position: relative;
+      z-index: 2;
+    }
     
     .project-logline {
-  font-size: 15px;
-  color: #414141;
-  line-height: 1.6;
-  font-family: "Times New Roman";
-  }
+      font-size: 15px;
+      color: black;
+      line-height: 1.6;
+      font-family: "Times New Roman";
+    }
     
     .project-genres {
-  font-family: 'IBM Plex Mono', Monospace;
-  font-size: 14px;
-  color: #767676;
-  padding-top: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-      
+      font-family: 'IBM Plex Mono', Monospace;
+      font-size: 14px;
+      color: #767676;
+      padding-top: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
     }
 
     .project-meta {
@@ -569,78 +580,68 @@
     }
 
     .download-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  
-  padding: 0.85rem 1.6rem;
-  
-  font-family: 'Roboto Mono', Monospace;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 500;
-  
-  color: black;
-  text-decoration: none;
-  
-  background: #e8e8e8;
-  border-radius: 13px;
-  border: none;
-  
-  box-shadow:
-    6px 6px 12px #c5c5c5,
-    -6px -6px 12px #ffffff,
-    inset 0px 0px 0px transparent;
-  
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  
-  transition:
-    box-shadow 0.3s ease,
-    color 0.3s ease,
-    transform 0.15s ease;
-}
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.6rem;
+      font-family: 'Roboto Mono', Monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: black;
+      text-decoration: none;
+      background: #e8e8e8;
+      border-radius: 13px;
+      border: none;
+      box-shadow:
+        6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff,
+        inset 0px 0px 0px transparent;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition:
+        box-shadow 0.3s ease,
+        color 0.3s ease,
+        transform 0.15s ease;
+    }
 
     .download-btn:hover {
-  color: #5a5a5a;
-  box-shadow:
-    4px 4px 8px #c5c5c5,
-    -4px -4px 8px #ffffff,
-    inset 0px 0px 0px transparent;
-  transform: translateY(1px);
-}
+      color: #5a5a5a;
+      box-shadow:
+        4px 4px 8px #c5c5c5,
+        -4px -4px 8px #ffffff,
+        inset 0px 0px 0px transparent;
+      transform: translateY(1px);
+    }
 
     .download-btn:active {
-  color: #333333;
-  box-shadow:
-    0px 0px 0px #c5c5c5,
-    0px 0px 0px #ffffff,
-    inset 4px 4px 8px #c5c5c5,
-    inset -4px -4px 8px #ffffff;
-  transform: translateY(2px);
-}
+      color: #333333;
+      box-shadow:
+        0px 0px 0px #c5c5c5,
+        0px 0px 0px #ffffff,
+        inset 4px 4px 8px #c5c5c5,
+        inset -4px -4px 8px #ffffff;
+      transform: translateY(2px);
+    }
 
     .download-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(255,255,255,0.1) 0%, 
-    rgba(255,255,255,0) 30%);
-  border-radius: 10px;
-  pointer-events: none;
-}
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, 
+        rgba(255,255,255,0.1) 0%, 
+        rgba(255,255,255,0) 30%);
+      border-radius: 10px;
+      pointer-events: none;
+    }
 
-    .download-btn:hover::after {
-  transform: translateY(2px);
-}
-
-        /* ===== CONTACT SECTION ===== */
+    /* CONTACT SECTION */
+    
     .contact-section {
       color: white;
       background: transparent;
@@ -724,6 +725,7 @@
       text-decoration: none;
       font-size: 1.25rem;
       transition: opacity 0.3s ease;
+      cursor: pointer;
     }
 
     .footer-links a:hover {
@@ -731,89 +733,87 @@
     }
 
     .name-copyright {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 4rem;
-  padding-top: 0;
-  text-align: left;
-}
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 4rem;
+      padding-top: 0;
+      text-align: left;
+    }
 
-.name-copyright .name {
-  font-size: 60px;
-  color: white;
-  text-align: left;
-  margin: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
+    .name-copyright .name {
+      font-size: 60px;
+      color: white;
+      text-align: left;
+      margin: 0;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-.name-copyright .copyright {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.05em;
-  text-align: left;
-  margin: 0;
-  padding-top: 10px;
-}
+    .name-copyright .copyright {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.05em;
+      text-align: left;
+      margin: 0;
+      padding-top: 10px;
+    }
 
-.contact-section .container {
-  padding: 0 2rem;
-  max-width: 800px;
-  margin: 0;
-  width: 100%;
-}
+    .contact-section .container {
+      padding: 0 2rem;
+      max-width: 800px;
+      margin: 0;
+      width: 100%;
+    }
 
-@media (max-width: 700px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  
-  .contact-section h2 {
-    font-size: 2rem;
-  }
+    @media (max-width: 700px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .contact-section h2 {
+        font-size: 2rem;
+      }
 
-  .contact-section .container {
-    padding: 0 1.5rem;
-  }
+      .contact-section .container {
+        padding: 0 1.5rem;
+      }
 
-  .footer-column {
-    padding-left: 1.2rem;
-  }
-  
-  .footer-title {
-    padding-left: 0.5rem;
-  }
-  
-  .footer-links {
-    padding-left: 0.5rem;
-  }
-}
+      .footer-column {
+        padding-left: 1.2rem;
+      }
+      
+      .footer-title {
+        padding-left: 0.5rem;
+      }
+      
+      .footer-links {
+        padding-left: 0.5rem;
+      }
+    }
 
     .spacer {
-  height: 6px;
-  border: none;
-  margin: 10px 0;
-  
-  background: 
-    linear-gradient(to bottom, 
-      rgba(0,0,0,0.02) 0%, 
-      rgba(0,0,0,0.06) 50%, 
-      rgba(0,0,0,0.02) 100%),
-    linear-gradient(to right, 
-      transparent 0%, 
-      rgba(255,255,255,0.8) 50%, 
-      transparent 100%);
-  
-  border-radius: 3px;
-  box-shadow: 
-    0 1px 3px rgba(0,0,0,0.05),
-    inset 0 1px 0 rgba(255,255,255,0.6),
-    inset 0 -1px 0 rgba(0,0,0,0.05);
-}
+      height: 6px;
+      border: none;
+      margin: 10px 0;
+      background: 
+        linear-gradient(to bottom, 
+          rgba(0,0,0,0.02) 0%, 
+          rgba(0,0,0,0.06) 50%, 
+          rgba(0,0,0,0.02) 100%),
+        linear-gradient(to right, 
+          transparent 0%, 
+          rgba(255,255,255,0.8) 50%, 
+          transparent 100%);
+      border-radius: 3px;
+      box-shadow: 
+        0 1px 3px rgba(0,0,0,0.05),
+        inset 0 1px 0 rgba(255,255,255,0.6),
+        inset 0 -1px 0 rgba(0,0,0,0.05);
+    }
 
     .spacer-footer {
       height: 2px;
@@ -821,215 +821,471 @@
     }
 
     .reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
-}
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
 
     .reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.reveal-delay-1 { transition-delay: 0.2s; }
-.reveal-delay-2 { transition-delay: 0.4s; }
-.reveal-delay-3 { transition-delay: 0.6s; }
-.reveal-delay-4 { transition-delay: 0.8s; }
-.reveal-delay-5 { transition-delay: 1.0s; }
-.reveal-delay-6 { transition-delay: 1.2s; }
+    .reveal-delay-1 { transition-delay: 0.2s; }
+    .reveal-delay-2 { transition-delay: 0.4s; }
+    .reveal-delay-3 { transition-delay: 0.6s; }
+    .reveal-delay-4 { transition-delay: 0.8s; }
+    .reveal-delay-5 { transition-delay: 1.0s; }
+    .reveal-delay-6 { transition-delay: 1.2s; }
 
-.hero .hero-title,
+    .hero .hero-title,
     .hero .subtitle {
-  opacity: 1;
-  transform: none;
-}
+      opacity: 1;
+      transform: none;
+    }
 
     .status-dot {
-    display: inline-block;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    vertical-align: middle;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      vertical-align: middle;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    .status-discontinued {
+      background-color: #ff3b30;
+    }
+
+    .status-completed {
+      background-color: #34c759;
+    }
+
+    .status-planning {
+      background-color: #ff9500;
+    }
+
+    /* FORM FULLPAGE */
+    
+    .contact-form-page {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #e4e4e4;
+      z-index: 9999;
+      padding: 4rem 2rem;
+      overflow-y: auto;
+    }
+
+    .contact-form-page.active {
+      display: block;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      background: none;
+      border: none;
+      color: #000;
+      font-size: 30px;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      z-index: 10000;
+    }
+
+    .back-button:hover {
+      background: rgba(0, 0, 0, 0.05);
+      transform: translateX(-3px);
+    }
+
+    /* FORM CON */
+
+    .form-container {
+  max-width: 600px;
+  margin: 4rem auto 2rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 10px 20px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.status-discontinued {
-    background-color: #ff3b30;
+    .form-container h2 {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: #000;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* FORM CAMPS */
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .required::after {
+      content: "*";
+      color: #ff3b30;
+      margin-left: 4px;
+    }
+
+    input, select, textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: #000;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-.status-completed {
-    background-color: #34c759;
+input:focus, select:focus, textarea:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 0 0 3px rgba(255, 255, 255, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.85);
 }
 
-.status-planning {
-    background-color: #ff9500;
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 16px;
+      padding-right: 2.5rem;
+    }
+
+    /* Botão submit */
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.6rem;
+  font-family: 'Roboto Mono', Monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
+
+.submit-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  color: #f0f0f0;
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    0 1px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255,255,255,0.1) 0%, 
+    rgba(255,255,255,0) 30%);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+    .form-message {
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 14px;
+      display: none;
+    }
+
+    .form-message.success {
+      background: rgba(52, 199, 89, 0.1);
+      color: #2d9c3d;
+      border: 1px solid rgba(52, 199, 89, 0.3);
+    }
+
+    .form-message.error {
+      background: rgba(255, 59, 48, 0.1);
+      color: #d70015;
+      border: 1px solid rgba(255, 59, 48, 0.3);
+    }
+    
+    .pTACT {
+      font-family: "Roboto Mono";
+      font-size: 17px;
+      color: #333333;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 3rem;
+    }
     
   </style>
 </head>
 
 <body>
   <audio id="clickSound" preload="auto">
-  <source src="click-sfx-287654.mp3" type="audio/mpeg">
-</audio>
-
-  <audio id="metalClinkSound" preload="auto">
-  <source src="metal-clink-415813.mp3" type="audio/mpeg">
+    <source src="click-sfx-287654.mp3" type="audio/mpeg">
   </audio>
 
-  <div class="menu-background-blur"></div>
-  
-  <button class="menu-btn" id="menuBtn">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <div class="menu-overlay" id="menuOverlay">
-    <nav class="menu-nav">
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-
-  <main>
-    <section id="hero" class="hero">
-      <div>
-        <h1 class="hero-title">MACY VEIL</h1>
-        <p class="subtitle">screenwriter</p>
-      </div>
-    </section>
-
-    <div class="spacer"></div>
-
-    <section id="about" class="about">
-  <div class="container">
-    <h2 class="reveal">About</h2>
-    <div class="about-content">
-      <p class="reveal reveal-delay-1">
-Hi! I'm Macy Veil, a Brazil-based screenwriter.</p>
-
-<p class="reveal reveal-delay-2">My work focuses on philosophical science fiction, dystopian narratives, psychological drama, and surreal horror. I prioritize visual storytelling and immersive experiences, using sound design, natural environments, distant human presence, and worldbuilding to construct deeply atmospheric narratives.</p>
-
-<p class="reveal reveal-delay-3">
-<strong>Inspirations:</strong> My work draws on Kubrick's ambition and Denis Villeneuve's emotional restraint. I'm drawn to subverting expectations, allowing meaning to emerge gradually rather than through explicit exposition. A curated list of <a class="a2" href="https://boxd.it/SfXVC$GQ3rsOUt3f3e10QT">Films That Shaped My Voice</a> can be found on <a class="a2" href="https://letterboxd.com/MacyVeil1">Letterboxd</a>.</p>
-
-<p class="reveal reveal-delay-4">
-<strong>Vision:</strong> I aim to explore bold narrative structures and develop a distinct cinematic language that treats atmosphere, scale, and perception as narrative forces. I approach writing by fully imagining and feeling each scene before committing it to the page — prioritizing clarity, immersion, and intuitive visual flow.</p>
-
-<p class="reveal reveal-delay-5">
-  Open to international productions and collaboration with directors who prioritize atmosphere and visual restraint.</p>
-        
-    </div>
-  </div>
-</section>
-
-    <div class="spacer"></div>
-
-    <section id="projects" class="projects">
-  <div class="container">
-    <h2 class="reveal">Projects</h2>
-    <div class="projects-list">
-      <div class="project-item reveal"></div>
-      <div class="project-item reveal">
-        <div class="project-number">01</div>
-            
-            <div class="project-header" onclick="toggleProject('project1')">
-              <h3 class="project-title">Loop - You'll Meet Yourself at the End <span class="material-symbols-outlined expand-arrow" id="arrow1">arrow_downward</span></h3>
-            </div>
-
-            <div class="project-details" id="details1">
-              <div class="project-details-content">
-                <p class="project-logline">Logline: In a fractured world shaped by cycles of collapse, divinity, and engineered life, intertwined characters confront time loops, memory fractures, and artificial gods, slowly realizing that history itself may be a recursive system unable to escape its own design.</p>
-                <p class="project-genres">Genres: Philosophical Science Fiction; Psychological Sci-Fi; Existential Drama; Speculative Fiction; Sci-Fi Mystery; Surreal / Atmospheric Sci-Fi.</p>
-              </div>
-            </div>
-
-            <div class="project-meta">Pilot Screenplay · 2025 · 25 Pages</div>
-            <div class="project-status">Status: <span class="status-dot status-discontinued"></span> Discontinued</div>
-            <a href="https://drive.google.com/file/d/14gjwVIYiM5vt2KqG9scYxjwOdIrXW76s/view?usp=drivesdk" class="download-btn">Download Screenplay</a>
-          </div>
-
-            <div class="project-item reveal reveal-delay-1"><div class="project-number">02</div>
-            
-            <div class="project-header" onclick="toggleProject('project2')">
-              <h3 class="project-title">Caust-07 <span class="material-symbols-outlined expand-arrow" id="arrow2">arrow_downward</span></h3>
-            </div>
-
-            <div class="project-details" id="details2">
-              <div class="project-details-content">
-                <p class="project-logline">Logline: When seven silent Obelisks descend upon Earth bearing a lethal, unreadable truth, humanity’s obsession with meaning fractures civilization — revealing that the true catastrophe is not their arrival, but our response to the unknowable.</p>
-                <p class="project-genres">Genres: Philosophical Science Fiction; Existential Sci-Fi; Speculative Fiction; Atmospheric Sci-Fi Horror.</p>
-              </div>
-            </div>
-
-            <div class="project-meta">Short Film · 2025 · 11 Pages (Screenplay) · 29 Pages (Lookbook)</div>
-            <div class="project-status">Status: <span class="status-dot status-completed"></span> Completed</div>
-            <a href="https://drive.google.com/drive/folders/1dpzPLm2v-lfRNJ_seSuzG3bQGjq-Vx0n" class="download-btn">Download Screenplay & Lookbook</a>
-          </div>
-
-          <div class="project-item reveal reveal-delay-2"><div class="project-number">03</div>
-            
-            <div class="project-header" onclick="toggleProject('project3')">
-              <h3 class="project-title">Rearview <span class="material-symbols-outlined expand-arrow" id="arrow3">arrow_downward</span></h3>
-            </div>
-
-            <div class="project-details" id="details3">
-              <div class="project-details-content">
-                <p class="project-logline">Logline: In a peripheral district of a vast city where herbivores and carnivores coexist, a lonely black cat mechanic becomes obsessed with the idea of being loved — unaware that a silent presence has been following him all along.</p>
-                <p class="project-genres">Genres: Psychological Drama; Dystopian; Surrealist Fiction.</p>
-              </div>
-            </div>
-
-            <div class="project-meta">Short Film · 2026</div>
-            <div class="project-status">Status: <span class="status-dot status-planning"></span> In Development (Screenplay)</div>
-          </div>
-
-          <div class="project-item"></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="spacer-footer"></div>
-
-    <!-- REPLACED FOOTER WITH CONTACT SECTION FROM FILE 2 -->
-      <section id="contact" class="contact-section">
-  <div class="container">
-    <div class="footer-grid">
-      <h2 class="reveal">Think. Feel. Write.<br><br>Authorial storytelling across genres and forms.</h2>
-      
-      <div class="footer-column reveal reveal-delay-1">
-        <h3 class="footer-title reveal">NAVIGATE</h3>
-        <div class="footer-links">
-          <a href="#about" class="reveal reveal-delay-2">About</a>
-          <a href="#projects" class="reveal reveal-delay-3">Projects</a>
-          <a href="#contact" class="reveal reveal-delay-4">Contact</a>
-        </div>
-      </div>
-      
-      <div class="footer-column reveal reveal-delay-1">
-        <h3 class="footer-title reveal reveal-delay-2">CONNECT</h3>
-        <div class="footer-links">
-          <a href="mailto:blackbox.macy@gmail.com" class="reveal reveal-delay-3">Email</a>
-          <a href="https://www.linkedin.com/in/macy-veil" class="reveal reveal-delay-4">LinkedIn</a>
-        </div>
-      </div>
-    </div>
+  <div class="site-content">
+    <div class="menu-background-blur"></div>
     
-    <div class="name-copyright">
-      <h2 class="name reveal reveal-delay-5">Macy Veil</h2>
-      <p class="copyright reveal reveal-delay-6" id="copyright"></p>
+    <button class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="menu-overlay" id="menuOverlay">
+      <nav class="menu-nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#" id="contactMenuLink">Contact</a>
+      </nav>
+    </div>
+
+    <main>
+      <section id="hero" class="hero">
+        <div>
+          <h1 class="hero-title">MACY VEIL</h1>
+          <p class="subtitle">screenwriter</p>
+        </div>
+      </section>
+
+      <div class="spacer"></div>
+
+      <section id="about" class="about">
+        <div class="container">
+          <h2 class="reveal">About</h2>
+          <div class="about-content">
+            <p class="reveal reveal-delay-1">Hi! I'm Macy Veil, a Brazil-based screenwriter.</p>
+            <p class="reveal reveal-delay-2">My work focuses on philosophical science fiction, dystopian narratives, psychological drama, and surreal horror. I prioritize visual storytelling and immersive experiences, using sound design, natural environments, distant human presence, and worldbuilding to construct deeply atmospheric narratives.</p>
+            <p class="reveal reveal-delay-3">
+              <strong>Inspirations:</strong> My work draws on Kubrick's ambition and Denis Villeneuve's emotional restraint. I'm drawn to subverting expectations, allowing meaning to emerge gradually rather than through explicit exposition. A curated list of <a class="a2" href="https://boxd.it/SfXVC$GQ3rsOUt3f3e10QT">Films That Shaped My Voice</a> can be found on <a class="a2" href="https://letterboxd.com/MacyVeil1">Letterboxd</a>.</p>
+            <p class="reveal reveal-delay-4">
+              <strong>Vision:</strong> I aim to explore bold narrative structures and develop a distinct cinematic language that treats atmosphere, scale, and perception as narrative forces. I approach writing by fully imagining and feeling each scene before committing it to the page — prioritizing clarity, immersion, and intuitive visual flow.</p>
+            <p class="reveal reveal-delay-5">Open to international productions and collaboration with directors who prioritize atmosphere and visual restraint.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="spacer"></div>
+
+      <section id="projects" class="projects">
+        <div class="container">
+          <h2 class="reveal">Projects</h2>
+          <div class="projects-list">
+            <div class="project-item reveal"></div>
+            <div class="project-item reveal">
+              <div class="project-number">01</div>
+              <div class="project-header" onclick="toggleProject('project1')">
+                <h3 class="project-title">Loop - You'll Meet Yourself at the End <span class="material-symbols-outlined expand-arrow" id="arrow1">arrow_downward</span></h3>
+              </div>
+              <div class="project-details" id="details1">
+                <div class="project-details-content">
+                  <p class="project-logline">Logline: In a fractured world shaped by cycles of collapse, divinity, and engineered life, intertwined characters confront time loops, memory fractures, and artificial gods, slowly realizing that history itself may be a recursive system unable to escape its own design.</p>
+                  <p class="project-genres">Genres: Philosophical Science Fiction; Psychological Sci-Fi; Existential Drama; Speculative Fiction; Sci-Fi Mystery; Surreal / Atmospheric Sci-Fi.</p>
+                </div>
+              </div>
+              <div class="project-meta">Pilot Screenplay · 2025 · 25 Pages</div>
+              <div class="project-status">Status: <span class="status-dot status-discontinued"></span> Discontinued</div>
+              <a href="https://drive.google.com/file/d/14gjwVIYiM5vt2KqG9scYxjwOdIrXW76s/view?usp=drivesdk" class="download-btn">Download Screenplay</a>
+            </div>
+
+            <div class="project-item reveal reveal-delay-1">
+              <div class="project-number">02</div>
+              <div class="project-header" onclick="toggleProject('project2')">
+                <h3 class="project-title">Caust-07 <span class="material-symbols-outlined expand-arrow" id="arrow2">arrow_downward</span></h3>
+              </div>
+              <div class="project-details" id="details2">
+                <div class="project-details-content">
+                  <p class="project-logline">Logline: When seven silent Obelisks descend upon Earth bearing a lethal, unreadable truth, humanity’s obsession with meaning fractures civilization — revealing that the true catastrophe is not their arrival, but our response to the unknowable.</p>
+                  <p class="project-genres">Genres: Philosophical Science Fiction; Existential Sci-Fi; Speculative Fiction; Atmospheric Sci-Fi Horror.</p>
+                </div>
+              </div>
+              <div class="project-meta">Short Film · 2025 · 11 Pages (Screenplay) · 29 Pages (Lookbook)</div>
+              <div class="project-status">Status: <span class="status-dot status-completed"></span> Completed</div>
+              <a href="https://drive.google.com/drive/folders/1dpzPLm2v-lfRNJ_seSuzG3bQGjq-Vx0n" class="download-btn">Download Screenplay & Lookbook</a>
+            </div>
+
+            <div class="project-item reveal reveal-delay-2">
+              <div class="project-number">03</div>
+              <div class="project-header" onclick="toggleProject('project3')">
+                <h3 class="project-title">Rearview <span class="material-symbols-outlined expand-arrow" id="arrow3">arrow_downward</span></h3>
+              </div>
+              <div class="project-details" id="details3">
+                <div class="project-details-content">
+                  <p class="project-logline">Logline: In a peripheral district of a vast city where herbivores and carnivores coexist, a lonely black cat mechanic becomes obsessed with the idea of being loved — unaware that a silent presence has been following him all along.</p>
+                  <p class="project-genres">Genres: Psychological Drama; Dystopian; Surrealist Fiction.</p>
+                </div>
+              </div>
+              <div class="project-meta">Short Film · 2026</div>
+              <div class="project-status">Status: <span class="status-dot status-planning"></span> In Development (Screenplay)</div>
+            </div>
+
+            <div class="project-item"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="spacer-footer"></div>
+
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="footer-grid">
+            <h2 class="reveal">Think. Feel. Write.<br><br>Authorial storytelling across genres and forms.</h2>
+            
+            <div class="footer-column reveal reveal-delay-1">
+              <h3 class="footer-title reveal">NAVIGATE</h3>
+              <div class="footer-links">
+                <a href="#about" class="reveal reveal-delay-2">About</a>
+                <a href="#projects" class="reveal reveal-delay-3">Projects</a>
+              </div>
+            </div>
+            
+            <div class="footer-column reveal reveal-delay-1">
+              <h3 class="footer-title reveal reveal-delay-2">CONNECT</h3>
+              <div class="footer-links">
+                <a href="#" id="contactFooterLink">Contact</a>
+                <a href="https://www.linkedin.com/in/macy-veil" class="reveal reveal-delay-4">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="name-copyright">
+            <h2 class="name reveal reveal-delay-5">Macy Veil</h2>
+            <p class="copyright reveal reveal-delay-6" id="copyright"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Página do Formulário de Contato -->
+  <div id="contactFormPage" class="contact-form-page">
+    <button class="back-button" id="backButton">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    
+    <div class="form-container">
+      <h2>GENERAL CONTACT</h2>
+      
+      <p class="pTACT">For collaborations, project discussions, or professional inquiries.<br><br>
+       <a href="mailto:blackbox.macy@gmail.com" class="a2">blackbox.macy@gmail.com</a><br></p>
+      
+      <form id="contactForm" action="https://formspree.io/f/xdalodbb" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName" class="required">FIRST NAME</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="lastName" class="required">LAST NAME</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="email" class="required">EMAIL</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject" class="required">SUBJECT</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Select subject</option>
+            <option value="collaboration">Collaboration Inquiry</option>
+            <option value="project">Project Discussion</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message" class="required">MESSAGE</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">SUBMIT MESSAGE</button>
+        
+        <div class="form-message" id="formMessage"></div>
+      </form>
     </div>
   </div>
-</section>
-</main>
-
+  
   <script>
     const menuBtn = document.getElementById('menuBtn');
     const menuOverlay = document.getElementById('menuOverlay');
-    const menuLinks = document.querySelectorAll('.menu-nav a');
+    const backButton = document.getElementById('backButton');
+    const contactFormPage = document.getElementById('contactFormPage');
+    const siteContent = document.querySelector('.site-content');
+    const contactMenuLink = document.getElementById('contactMenuLink');
+    const contactFooterLink = document.getElementById('contactFooterLink');
+    const contactForm = document.getElementById('contactForm');
 
     menuBtn.addEventListener('click', () => {
       menuBtn.classList.toggle('active');
@@ -1037,11 +1293,13 @@ Hi! I'm Macy Veil, a Brazil-based screenwriter.</p>
       document.body.classList.toggle('menu-open');
     });
 
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menuBtn.classList.remove('active');
-        menuOverlay.classList.remove('active');
-        document.body.classList.remove('menu-open');
+    document.querySelectorAll('.menu-nav a:not(#contactMenuLink)').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (link.getAttribute('href').startsWith('#')) {
+          menuBtn.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        }
       });
     });
 
@@ -1057,120 +1315,144 @@ Hi! I'm Macy Veil, a Brazil-based screenwriter.</p>
       const currentYear = new Date().getFullYear();
       document.getElementById('copyright').textContent = `© ${currentYear} Macy Veil. All rights reserved.`;
     }
-
     updateCopyright();
-    
-    function scheduleNewYearUpdate() {
-      const now = new Date();
-      const nextYear = new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0, 0);
-      const timeUntilNewYear = nextYear - now;
-      
-      setTimeout(() => {
-        updateCopyright();
-        scheduleNewYearUpdate();
-      }, timeUntilNewYear);
-    }
-    
-    scheduleNewYearUpdate();
-    
+
     function playClickSound() {
-  const sound = document.getElementById('clickSound');
-  sound.currentTime = 0;
-  sound.volume = 0.6; 
-  sound.play();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const downloadButtons = document.querySelectorAll('.download-btn');
-  
-  downloadButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      playClickSound();
-    });
-  });
-  
-function revealOnScroll() {
-  const reveals = document.querySelectorAll('.reveal');
-  const windowHeight = window.innerHeight;
-  const revealPoint = 150;
-
-  reveals.forEach(element => {
-    const revealTop = element.getBoundingClientRect().top;
-    
-    if (revealTop < windowHeight - revealPoint) {
-      element.classList.add('active');
-    } else {
-    }
-  });
-}
-
-window.addEventListener('load', () => {
-  revealOnScroll();
-  
-  const initialReveals = document.querySelectorAll('.reveal');
-  const windowHeight = window.innerHeight;
-  
-  initialReveals.forEach(element => {
-    const revealTop = element.getBoundingClientRect().top;
-    if (revealTop < windowHeight - 100) {
-      element.classList.add('active');
-    }
-  });
-});
-
-window.addEventListener('scroll', revealOnScroll);
-
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(revealOnScroll, 50);
-  
-function revealOnScroll() {
-  const reveals = document.querySelectorAll('.reveal');
-  const windowHeight = window.innerHeight;
-  const revealPoint = 100;
-
-  reveals.forEach((element, index) => {
-    const elementTop = element.getBoundingClientRect().top;
-    const elementBottom = element.getBoundingClientRect().bottom;
-    
-    const isVisible = elementTop < windowHeight - revealPoint;
-    
-    const isFooterElement = element.closest('footer');
-    const isFooterInView = elementBottom > 0 && elementTop < windowHeight;
-    
-    if (isVisible || (isFooterElement && isFooterInView)) {
-      element.classList.add('active');
-    }
-  });
-}
-
-window.addEventListener('load', () => {
-
-  revealOnScroll();
-  
-  setTimeout(() => {
-    const footerElements = document.querySelectorAll('footer .reveal');
-    footerElements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        el.classList.add('active');
+      const sound = document.getElementById('clickSound');
+      if (sound) {
+        sound.currentTime = 0;
+        sound.volume = 0.6;
+        sound.play().catch(e => console.log("Audio play failed:", e));
       }
+    }
+
+    function showContactForm() {
+      
+      menuBtn.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      document.body.classList.remove('menu-open');
+
+      siteContent.style.display = 'none';
+
+      contactFormPage.classList.add('active');
+      document.body.classList.add('form-open');
+
+      playClickSound();
+    }
+
+    function hideContactForm() {
+
+      siteContent.style.display = 'block';
+
+      contactFormPage.classList.remove('active');
+      document.body.classList.remove('form-open');
+
+      playClickSound();
+    }
+
+    contactMenuLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showContactForm();
     });
-  }, 500);
-});
 
-let isScrolling;
-window.addEventListener('scroll', () => {
-  window.clearTimeout(isScrolling);
-  isScrolling = setTimeout(() => {
-    revealOnScroll();
-  }, 50);
-});
+    contactFooterLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showContactForm();
+    });
 
-window.addEventListener('scrollend', revealOnScroll);
- });
-});
+    backButton.addEventListener('click', hideContactForm);
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const submitBtn = this.querySelector('.submit-btn');
+        const messageDiv = document.getElementById('formMessage');
+        const originalText = submitBtn.textContent;
+
+        // Show loading state
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        try {
+          const formData = new FormData(this);
+          const response = await fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+
+            messageDiv.textContent = 'Message sent successfully!';
+            messageDiv.className = 'form-message success';
+            messageDiv.style.display = 'block';
+            this.reset();
+
+            setTimeout(() => {
+              messageDiv.style.display = 'none';
+            }, 5000);
+          } else {
+
+            messageDiv.textContent = 'Error sending message. Please try again.';
+            messageDiv.className = 'form-message error';
+            messageDiv.style.display = 'block';
+          }
+        } catch (error) {
+          messageDiv.textContent = 'Network error. Please try again.';
+          messageDiv.className = 'form-message error';
+          messageDiv.style.display = 'block';
+        } finally {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+    }
+
+    // Download buttons sound
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const downloadButtons = document.querySelectorAll('.download-btn');
+      downloadButtons.forEach(button => {
+        button.addEventListener('click', playClickSound);
+      });
+    });
+
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+      const revealPoint = 100;
+
+      reveals.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        
+        if (elementTop < windowHeight - revealPoint) {
+          element.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('load', () => {
+      revealOnScroll();
+
+      const initialReveals = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+      
+      initialReveals.forEach(element => {
+        const revealTop = element.getBoundingClientRect().top;
+        if (revealTop < windowHeight - 100) {
+          element.classList.add('active');
+        }
+      });
+    });
+
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(revealOnScroll, 50);
+    });
   </script>
 </body>
 </html>
