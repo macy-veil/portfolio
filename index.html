@@ -1473,11 +1473,6 @@ input:focus, select:focus, textarea:focus {
     messageField.addEventListener("input", () => {
       counter.textContent = `${messageField.value.length} characters`;
     });
-
-    window.addEventListener('beforeunload', function (event) {
-  event.preventDefault();
-  event.returnValue = '';
-    });
   </script>
   
 </body>
