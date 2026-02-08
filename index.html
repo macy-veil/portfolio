@@ -1081,6 +1081,13 @@ input:focus, select:focus, textarea:focus {
       justify-content: center;
       padding-bottom: 3rem;
     }
+
+    .char-counter {
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.55);
+  text-align: right;
+  margin-top: 0.25rem;
+    }
     
   </style>
 </head>
@@ -1266,8 +1273,9 @@ input:focus, select:focus, textarea:focus {
         </div>
         
         <div class="form-group">
-          <label for="message" class="required">MESSAGE</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
+  <label for="message" class="required">MESSAGE</label>
+  <textarea id="message" name="message" rows="6" required></textarea>
+  <div class="char-counter" id="charCounter">0 characters</div>
         </div>
         
         <button type="submit" class="submit-btn">SUBMIT MESSAGE</button>
@@ -1453,6 +1461,14 @@ input:focus, select:focus, textarea:focus {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(revealOnScroll, 50);
     });
+
+    const messageField = document.getElementById("message");
+  const counter = document.getElementById("charCounter");
+
+  messageField.addEventListener("input", () => {
+    counter.textContent = `${messageField.value.length} characters`;
+  });
+    
   </script>
 </body>
 </html>
