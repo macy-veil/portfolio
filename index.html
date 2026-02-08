@@ -1097,6 +1097,10 @@ input:focus, select:focus, textarea:focus {
     <source src="click-sfx-287654.mp3" type="audio/mpeg">
   </audio>
 
+  <audio id="metalClinkSound" preload="auto">
+  <source src="metal-clink-415813.mp3" type="audio/mpeg">
+  </audio>
+
   <div class="site-content">
     <div class="menu-background-blur"></div>
     
@@ -1395,7 +1399,7 @@ input:focus, select:focus, textarea:focus {
           
           if (response.ok) {
 
-            messageDiv.textContent = 'Message sent successfully!';
+            messageDiv.textContent = 'Thank you for reaching out!';
             messageDiv.className = 'form-message success';
             messageDiv.style.display = 'block';
             this.reset();
@@ -1405,7 +1409,7 @@ input:focus, select:focus, textarea:focus {
             }, 5000);
           } else {
 
-            messageDiv.textContent = 'Error sending message. Please try again.';
+            messageDiv.textContent = 'Error sending message. Please try again or contact me by email.';
             messageDiv.className = 'form-message error';
             messageDiv.style.display = 'block';
           }
@@ -1442,6 +1446,32 @@ input:focus, select:focus, textarea:focus {
         }
       });
     }
+
+    const contactFooterLink = document.getElementById('contactFooterLink');
+  if (contactFooterLink) {
+    contactFooterLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const metalClinkSound = document.getElementById('metalClinkSound');
+      if (metalClinkSound) {
+        metalClinkSound.currentTime = 0;
+        metalClinkSound.volume = 0.6;
+        metalClinkSound.play();
+        
+        setTimeout(() => {
+          const contactSection = document.getElementById('contact');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 50);
+      } else {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  }
 
     window.addEventListener('load', () => {
       revealOnScroll();
