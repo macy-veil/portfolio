@@ -874,24 +874,34 @@
     }
 
     /* FORM FULLPAGE */
-    
+
     .contact-form-page {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #e4e4e4;
-      z-index: 9999;
-      padding: 4rem 2rem;
-      overflow-y: auto;
-    }
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f0f0f0 0%, #c2c2c2 25%, #f0f0f0 50%, #d6d6d6 75%, #f0f0f0 100%);
+  background-size: 600% 600%;
+  animation: liquidGradient 15s ease-in-out infinite;
+  z-index: 9999;
+  padding: 4rem 2rem;
+  overflow-y: auto;
+}
 
     .contact-form-page.active {
-      display: block;
-    }
+  display: block;
+}
 
+@keyframes liquidGradient {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+      }
+    
     .back-button {
       position: absolute;
       top: 2rem;
@@ -934,7 +944,7 @@
       font-family: 'Roboto Mono', monospace;
       font-size: 2rem;
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       color: #000;
       text-transform: none;
       letter-spacing: 0;
