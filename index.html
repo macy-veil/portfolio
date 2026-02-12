@@ -987,38 +987,98 @@
       margin-left: 4px;
     }
 
-    input, select, textarea {
+    input,
+select,
+textarea {
   width: 100%;
   padding: 0.9rem 1rem;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
-  color: #000;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
+  color: #1a1a1a;
+  background: rgba(255, 255, 255, 0.65);
+  border: 0.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
   outline: none;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px) saturate(200%);
+  -webkit-backdrop-filter: blur(10px) saturate(200%);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.02),
+    6px 6px 12px rgba(200, 200, 200, 0.1),
+    -6px -6px 12px rgba(255, 255, 255, 0.4),
+    0 0 0 0.5px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+  position: relative;
 }
 
-input:focus, select:focus, textarea:focus {
-  border-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 
-    0 0 0 3px rgba(255, 255, 255, 0.2),
-    0 4px 12px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.85);
+input:hover,
+select:hover,
+textarea:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.02),
+    4px 4px 8px rgba(200, 200, 200, 0.1),
+    -4px -4px 8px rgba(255, 255, 255, 0.5),
+    0 0 0 0.5px rgba(0, 0, 0, 0.03);
+  transform: translateY(1px);
 }
 
-    select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      background-size: 16px;
-      padding-right: 2.5rem;
-    }
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.05),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+    0 1px 6px rgba(0, 0, 0, 0.02);
+  transform: translateY(3px);
+}
 
+input::before,
+select::before,
+textarea::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  input,
+  select,
+  textarea {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow:
+      inset 0 1px 3px rgba(0, 0, 0, 0.02),
+      6px 6px 12px rgba(200, 200, 200, 0.2),
+      -6px -6px 12px rgba(255, 255, 255, 0.7);
+  }
+  }
+    
     /* Botão submit */
 .submit-btn {
   display: inline-flex;
