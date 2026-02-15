@@ -70,6 +70,16 @@
       border-bottom-color: #444444 !important;
     }
 
+    .a3 {
+      color: white !important;
+      border-bottom-color: white !important;
+    }
+
+    .a3:hover {
+      color: #8c8c8c !important;
+      border-bottom-color: #8c8c8c !important;
+    }
+
     .menu-background-blur {
       position: fixed;
       top: 0;
@@ -889,10 +899,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #e6e6e6 0%, #c0c0c0 18%,
-  #eaeaea 43%, #cacaca 68%, #e0e0e0 100%);
-  background-size: 600% 600%;
-  animation: liquidGradient 15s ease-in-out infinite;
+  background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('form.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
   z-index: 9999;
   padding: 4rem 2rem;
   overflow-y: auto;
@@ -901,14 +913,6 @@
     .contact-form-page.active {
   display: block;
 }
-
-@keyframes liquidGradient {
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 50%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 50%; }
-  100% { background-position: 0% 50%; }
-      }
     
     .back-button {
   position: absolute;
@@ -925,7 +929,7 @@
   background: transparent;
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-  color: #666666;
+  color: #a9a9a9;
   font-size: 30px;
   cursor: pointer;
   outline: none;
@@ -942,7 +946,7 @@
     0 10px 20px rgba(0, 0, 0, 0.02),
     0 0 0 0.5px rgba(255, 255, 255, 0.1);
   transform: scale(1.15) translateX(-3px);
-  color: #000;
+  color: white;
 }
 
     .back-button:active {
@@ -965,7 +969,7 @@
   background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(40px) saturate(200%);
   -webkit-backdrop-filter: blur(40px) saturate(200%);
-  border-radius: 60px;
+  border-radius: 69px;
   border: 0.7px solid rgba(255, 255, 255, 0.2);
   box-shadow:
     0 20px 40px -8px rgba(0, 0, 0, 0.08),
@@ -988,7 +992,7 @@
       font-size: 2rem;
       text-align: center;
       margin-bottom: 2rem;
-      color: #000;
+      color: white;
       text-transform: none;
       letter-spacing: 0;
     }
@@ -1009,7 +1013,7 @@
       display: block;
       font-family: 'IBM Plex Mono', monospace;
       font-size: 13px;
-      color: #333;
+      color: #e5e5e5;
       margin-bottom: 0.5rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -1212,15 +1216,15 @@ textarea {
     .pTACT {
       font-family: "Roboto Mono";
       font-size: 17px;
-      color: #333333;
+      color: white;
       align-items: center;
       justify-content: center;
       padding-bottom: 3rem;
     }
 
     .char-counter {
-  font-size: 0.75rem;
-  color: rgba(0, 0, 0, 0.55);
+  font-size: 0.76rem;
+  color: #d0d0d0;
   text-align: right;
   margin-top: 0.25rem;
     }
@@ -1383,7 +1387,7 @@ textarea {
       
       <p class="pTACT">For collaborations, project discussions, or inquiries.<br>
         I typically respond within 24–48 hours.<br><br>
-       <a href="mailto:blackbox.macy@gmail.com" class="a2">blackbox.macy@gmail.com</a><br></p>
+       <a href="mailto:blackbox.macy@gmail.com" class="a3">blackbox.macy@gmail.com</a><br></p>
       
       <form id="contactForm" action="https://formspree.io/f/xdalodbb" method="POST">
         <div class="form-row">
