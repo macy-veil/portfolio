@@ -377,6 +377,7 @@
       background-repeat: no-repeat;
       filter: saturate(0.4) contrast(1.05);
       min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -885,17 +886,14 @@
 
     .guide-dot-discontinued {
       background-color: #ff3b30;
-      box-shadow: 0 0 8px rgba(255, 59, 48, 0.6);
     }
 
     .guide-dot-completed {
       background-color: #34c759;
-      box-shadow: 0 0 8px rgba(52, 199, 89, 0.6);
     }
 
     .guide-dot-planning {
       background-color: #ff9500;
-      box-shadow: 0 0 8px rgba(255, 149, 0, 0.6);
     }
 
     /* FORM FULLPAGE */
@@ -1492,6 +1490,18 @@ textarea {
         const sectionRect = projectsSection.getBoundingClientRect();
         const items = projectsSection.querySelectorAll('.project-item');
 
+        const leftRail = projectsSection.querySelector('.guide-rail-left');
+        const rightRail = projectsSection.querySelector('.guide-rail-right');
+        if (!leftRail || !rightRail) return;
+
+        // Measure the rails' real rendered position instead of assuming a
+        // fixed offset, so the dots/ticks always land exactly on the rail
+        // on both sides, regardless of scrollbars/rounding.
+        const leftRailRect = leftRail.getBoundingClientRect();
+        const rightRailRect = rightRail.getBoundingClientRect();
+        const leftX = Math.round(leftRailRect.left - sectionRect.left);
+        const rightX = Math.round(rightRailRect.left - sectionRect.left);
+
         items.forEach(item => {
           const header = item.querySelector('.project-header');
           if (!header) return;
@@ -1500,17 +1510,20 @@ textarea {
           const itemRect = item.getBoundingClientRect();
           const centerY = Math.round(itemRect.top + itemRect.height / 2 - sectionRect.top);
 
-          [ 'left', 'right' ].forEach(side => {
+          [
+            { x: leftX, tickLeft: 0, tickWidth: leftX },
+            { x: rightX, tickLeft: rightX, tickWidth: sectionRect.width - rightX }
+          ].forEach(({ x, tickLeft, tickWidth }) => {
             const dot = document.createElement('div');
             dot.className = 'guide-dot' + (status ? ' guide-dot-' + status : '');
-            dot.style[side] = '2rem';
+            dot.style.left = x + 'px';
             dot.style.top = centerY + 'px';
             projectsSection.appendChild(dot);
 
             const tick = document.createElement('div');
             tick.className = 'guide-tick';
-            tick.style[side] = '0';
-            tick.style.width = '2rem';
+            tick.style.left = tickLeft + 'px';
+            tick.style.width = tickWidth + 'px';
             tick.style.top = centerY + 'px';
             projectsSection.appendChild(tick);
           });
