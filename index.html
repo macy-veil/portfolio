@@ -233,13 +233,6 @@ el.addEventListener('input', () => { formDirty = true; saveFormDraft(); });
 el.addEventListener('change', () => { formDirty = true; saveFormDraft(); });
 });
 
-window.addEventListener('beforeunload', (e) => {
-if (!formDirty) return;
-e.preventDefault();
-e.returnValue = 'You have unsaved changes. Are you sure you want to leave?';
-return e.returnValue;
-});
-
 function setSending(on) {
 submitWrap.classList.toggle('is-loading', on);
 submitBtn.style.pointerEvents = on ? 'none' : '';
