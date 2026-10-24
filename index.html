@@ -9,3 +9,282 @@
 body.form-open{background-color:#000}
 .form-container{isolation:isolate}
 </style>
+<style id="polish-2026-10d">
+/* upload icon tile: smaller, quieter, hairline edge + very soft shadow (hover = gentle lift only) */
+.dz .dz-icon{width:56px;height:56px;margin-bottom:14px;border-radius:16px;color:#48484a;
+  background:linear-gradient(180deg,#fff 0%,#fafafc 100%);
+  box-shadow:0 0 0 .5px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.035),0 6px 16px -6px rgba(0,0,0,.09),inset 0 1px 0 #fff}
+.dz .dz-icon svg{width:32px;height:32px}
+@media(hover:hover){
+  .dz:hover .dz-icon{transform:translateY(-2px);color:#3a3a3c;
+    box-shadow:0 0 0 .5px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.04),0 10px 22px -8px rgba(0,0,0,.12),inset 0 1px 0 #fff}
+}
+.dz:active .dz-icon{transform:scale(.97);box-shadow:0 0 0 .5px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.04),inset 0 1px 0 #fff}
+.dz.is-over .dz-icon{box-shadow:0 0 0 .5px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04),0 12px 26px -8px rgba(0,0,0,.14),inset 0 1px 0 #fff}
+</style>
+<style id="polish-2026-10">
+/* ---------- 1. Menu offset inside the project page = same as main page ---------- */
+/* Project page: the two bars are one bigger navbar. Both turn grey together (existing menu-active rules) and the grey menu panel
+   starts below both. On close the contents wait for the grey to start fading, then return together. */
+
+
+/* ---------- 2. Hero image: scroll-driven zoom (layer injected by script) ---------- */
+.hero{position:relative;overflow:hidden;isolation:isolate;background-image:none!important}
+.hero-bg{position:absolute;inset:0;z-index:-1;background-color:#000;background-image:radial-gradient(ellipse 64% 52% at 50% 50%,rgba(0,0,0,.20) 0%,rgba(0,0,0,.12) 55%,rgba(0,0,0,0) 100%),linear-gradient(180deg,rgba(0,0,0,.14) 0%,rgba(0,0,0,.17) 45%,rgba(0,0,0,.34) 100%),url(form.png);background-size:cover;background-position:center;background-repeat:no-repeat;transform-origin:50% 50%;transform:scale(1);will-change:transform;backface-visibility:hidden;pointer-events:none}
+
+/* ---------- 3. Rearview card: very soft scroll zoom (uses `scale`, hover keeps `transform`) ---------- */
+.pw-solo .pw-card .pw-art{will-change:scale}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg{transform:none!important}
+  .pw-solo .pw-card .pw-art{scale:none!important}
+}
+</style>
+<script>
+(()=>{"use strict";
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hero=document.querySelector(".hero");
+  let bg=null;
+  if(hero){
+    bg=document.createElement("div");
+    bg.className="hero-bg";
+    bg.setAttribute("aria-hidden","true");
+    hero.insertBefore(bg,hero.firstChild);
+  }
+  if(reduce)return;
+
+  const HERO_ZOOM=.28;   /* hero image grows up to +28% as it scrolls away */
+  const CARD_ZOOM=.06;   /* cover starts 6% zoomed and settles to 100% while it scrolls into place */
+  const TAU=120;         /* smoothing time-constant in ms: identical feel on 60 / 120 / 144 Hz screens */
+
+  const clamp=v=>v<0?0:v>1?1:v;
+  const cards=new Map();
+  document.querySelectorAll(".pw-solo .pw-card .pw-art").forEach(a=>cards.set(a.parentElement,a));
+  const live=new Set();
+  let heroH=hero?hero.offsetHeight:0,heroOn=true,heroScale=null,raf=0,last=0;
+
+  function frame(now){
+    raf=0;
+    const dt=Math.min(now-(last||now-16.7),64);last=now;
+    const k=1-Math.exp(-dt/TAU);
+    let busy=false;
+
+    if(hero&&bg&&heroOn){
+      const t=clamp(scrollY/Math.max(heroH,1)),target=1+HERO_ZOOM*t;
+      if(heroScale===null)heroScale=target;
+      heroScale+=(target-heroScale)*k;
+      if(Math.abs(target-heroScale)>.0004)busy=true;else heroScale=target;
+      bg.style.transform="scale("+heroScale.toFixed(4)+")";
+    }
+
+    const vh=innerHeight;
+    live.forEach(card=>{
+      const art=cards.get(card),r=card.getBoundingClientRect();
+      const t=clamp((vh*.85-r.top)/Math.max(r.height,1)),target=1+CARD_ZOOM*(1-t);
+      if(art._z===undefined)art._z=target;
+      art._z+=(target-art._z)*k;
+      if(Math.abs(target-art._z)>.0003)busy=true;else art._z=target;
+      art.style.scale=art._z.toFixed(4);
+    });
+
+    if(busy)raf=requestAnimationFrame(frame);else last=0;
+  }
+  const kick=()=>{if(!raf)raf=requestAnimationFrame(frame)};
+
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver(es=>{
+      es.forEach(e=>{
+        if(e.target===hero)heroOn=e.isIntersecting;
+        else e.isIntersecting?live.add(e.target):live.delete(e.target);
+      });
+      kick();
+    },{rootMargin:"160px 0px"});
+    hero&&io.observe(hero);
+    cards.forEach((_,c)=>io.observe(c));
+  }else cards.forEach((_,c)=>live.add(c));
+
+  addEventListener("scroll",kick,{passive:true});
+  addEventListener("resize",()=>{heroH=hero?hero.offsetHeight:0;kick()});
+  addEventListener("load",()=>{heroH=hero?hero.offsetHeight:0;kick()});
+  kick();
+})();
+</script>
+<style id="motion-final">/* ==========================================================================
+   MOTION SYSTEM — final layer
+   One easing family, one rise distance, opacity always lands before position.
+   Everything below sits inside no-preference, so reduced-motion visitors keep
+   the original (instant) behaviour.
+   ========================================================================== */
+:root{
+  --m-out:cubic-bezier(.16,1,.3,1);      /* expo-out: quick start, long soft landing */
+  --m-soft:cubic-bezier(.33,1,.68,1);    /* cubic-out: opacity resolves a beat before position */
+  --m-inout:cubic-bezier(.65,0,.35,1);   /* exits */
+  --m-rise:20px
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media (prefers-reduced-motion:no-preference){
+
+/* 1 · Scroll reveals: rise + fade only. No blur on paragraphs/blocks (cheaper to paint, calmer to read) */
+.reveal{opacity:0;transform:translate3d(0,var(--m-rise),0);filter:none;
+  transition:opacity .9s var(--m-soft),transform 1.25s var(--m-out)}
+.reveal.active{opacity:1;transform:none;filter:none}
+.reveal .reveal{transform:translate3d(0,10px,0)}
+.reveal .reveal.active{transform:none}
+.footer-links .reveal{transition:opacity .9s var(--m-soft),transform 1.25s var(--m-out),color .45s var(--ease-menu)}
+
+/* 2 · Hero copy keeps a whisper of focus-pull: it is short and it is the one moment on the page */
+.reveal-fade,.reveal-h1{opacity:0;transform:translate3d(0,14px,0);filter:blur(4px);
+  transition:opacity 1.2s var(--m-soft),transform 1.5s var(--m-out),filter 1s var(--m-soft)}
+.reveal-fade.active,.reveal-h1.active{opacity:1;transform:none;filter:none}
+
+/* 3 · Headings: letters rise, no filter on the whole heading */
+.reveal-letters.rl-ready{filter:none;transition:none}
+.reveal-letters .rl-char{opacity:0;transform:translate3d(0,.5em,0);
+  transition:opacity .8s var(--m-soft),transform 1.25s var(--m-out)}
+.reveal-letters.active .rl-char{opacity:1;transform:none}
+
+/* 4 · Hero image: lights up out of black while it settles from 7% zoomed.
+   Uses `scale`, so the scroll-zoom (transform) keeps working untouched. */
+.hero-bg{animation:m-hero-settle 2.6s var(--m-out) both}
+.hero-bg:after{content:"";position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;
+  animation:m-hero-veil 1.9s var(--m-soft) both}
+@keyframes m-hero-settle{from{scale:1.07}to{scale:1}}
+@keyframes m-hero-veil{from{opacity:1}to{opacity:0}}
+
+/* 5 · Rearview card.
+   The old card rule replaced the reveal transition, so opacity popped in while position glided.
+   Reveal now uses `translate`, hover/press use `scale`, nothing fights over `transform`. */
+.pw-solo .pw-card.pw-reveal{opacity:0;transform:none;translate:0 36px;scale:1;
+  transition:opacity 1.1s var(--m-soft),translate 1.5s var(--m-out),scale .9s var(--m-out)}
+.pw-solo .pw-card.pw-reveal.in{opacity:1;translate:0 0}
+@media (hover:hover){.pw-solo .pw-card.pw-reveal:hover{transform:none;scale:1.012}}
+.pw-solo .pw-card.pw-reveal:active{transform:none;scale:.988;transition-duration:.2s}
+.pw-solo .pw-card .pw-bottom>*{opacity:0;transform:translate3d(0,12px,0);filter:none;
+  transition:opacity .4s var(--m-soft),transform .4s var(--m-soft)}
+.pw-solo .pw-card.in .pw-bottom>*{opacity:1;transform:none;filter:none;
+  transition:opacity 1s var(--m-soft) .5s,transform 1.3s var(--m-out) .5s}
+.pw-solo .pw-card.in .pw-bottom>*:nth-child(2){transition-delay:.62s}
+
+/* 6 · Awards: same rise, no blur, stagger a touch tighter */
+.pw-award.pw-reveal{filter:none;transform:translate3d(0,16px,0);
+  transition:opacity .9s var(--m-soft) calc(var(--i,0)*.07s),transform 1.2s var(--m-out) calc(var(--i,0)*.07s),background-color .5s var(--ease)}
+.pw-award.pw-reveal.in{filter:none;transform:none}
+
+/* 7 · Rearview page: arrives with weight, leaves quickly */
+.pw-page{transform:translate3d(0,24px,0);
+  transition:opacity .32s var(--m-inout),transform .42s var(--m-inout),visibility 0s linear .32s}
+.pw-page.open{transform:none;
+  transition:opacity .6s var(--m-soft),transform 1.1s var(--m-out),visibility 0s}
+
+/* Everything inside reveals when it is actually seen (script adds .m-r, then .m-in), so nothing
+   below the fold plays its animation off-screen. Blur removed: the credits block alone was a full-width filter. */
+.m-on .pw-page .pw-intro>.m-r,.m-on .pw-page .pw-screen.m-r{
+  opacity:0;transform:translate3d(0,26px,0);filter:none;transition:none}
+.m-on .pw-page .pw-intro>.m-r.m-in,.m-on .pw-page .pw-screen.m-r.m-in{
+  opacity:1;transform:none;
+  transition:opacity 1s var(--m-soft) var(--md,0s),transform 1.4s var(--m-out) var(--md,0s)}
+
+/* the title is split into letters (same language as the main-page headings), so its box stays put */
+.m-on .pw-page .pw-intro>.pw-h.m-r{opacity:1;transform:none;transition:none}
+.m-word{display:inline-block;white-space:nowrap}
+.m-ch{display:inline-block;opacity:0;transform:translate3d(0,.55em,0)}
+.pw-h.m-in .m-ch{opacity:1;transform:none;
+  transition:opacity .8s var(--m-soft) calc(var(--md,0s) + var(--cd,0ms)),
+             transform 1.3s var(--m-out) calc(var(--md,0s) + var(--cd,0ms))}
+
+/* cover image settles from 12% zoomed as the film comes in (scroll-zoom keeps using transform) */
+.m-on .pw-film.m-r .pw-art>img{scale:1.12}
+.m-on .pw-film.m-r.m-in .pw-art>img{scale:1;transition:scale 2.4s var(--m-out) var(--md,0s)}
+
+/* credits: rows follow each other */
+.m-on .pw-specs.m-r .pw-spec{opacity:0;transform:translate3d(0,12px,0)}
+.m-on .pw-specs.m-r.m-in .pw-spec{opacity:1;transform:none;
+  transition:opacity .8s var(--m-soft) calc(var(--md,0s) + .15s + var(--si,0)*.07s),
+             transform 1.1s var(--m-out) calc(var(--md,0s) + .15s + var(--si,0)*.07s)}
+
+/* aura: beams drift only while they can be seen (script toggles .m-off) and while the page is open */
+.au-beam{will-change:auto}
+.pw-page:not(.open) .au-beam,.pw-aura.m-off .au-beam{animation-play-state:paused}
+
+}
+</style>
+<script id="motion-final-js">(()=>{"use strict";
+  /* Rearview page choreography. Reduced motion: do nothing, the original instant behaviour stays. */
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const scroll=document.getElementById("pwScroll");
+  if(!scroll)return;
+  document.documentElement.classList.add("m-on");
+
+  /* title -> letters (same .rise language as the headings on the main page) */
+  function splitTitle(h){
+    if(h.dataset.mSplit)return;
+    h.dataset.mSplit="1";
+    const text=h.textContent,n=Array.from(text.replace(/\s+/g,"")).length;
+    const span=n>1?Math.min(42*(n-1),520):0;
+    h.setAttribute("aria-label",text);
+    h.textContent="";
+    let i=0;
+    const frag=document.createDocumentFragment();
+    text.split(/(\s+)/).forEach(w=>{
+      if(!w)return;
+      if(/^\s+$/.test(w)){frag.appendChild(document.createTextNode(w));return}
+      const word=document.createElement("span");
+      word.className="m-word";
+      word.setAttribute("aria-hidden","true");
+      for(const ch of w){
+        const c=document.createElement("span");
+        c.className="m-ch";
+        c.textContent=ch;
+        c.style.setProperty("--cd",Math.round(span*Math.pow(i++/Math.max(n-1,1),.85))+"ms");
+        word.appendChild(c);
+      }
+      frag.appendChild(word);
+    });
+    h.appendChild(frag);
+  }
+
+  let io=null,started=false;
+  const auraIO="IntersectionObserver" in window?new IntersectionObserver(es=>{
+    es.forEach(e=>e.target.classList.toggle("m-off",!e.isIntersecting));
+  },{root:scroll}):null;
+
+  function arm(){
+    const aura=scroll.querySelector(".pw-aura");
+    if(aura&&auraIO&&!aura._m){aura._m=1;auraIO.observe(aura)}
+
+    const intro=scroll.querySelector(".pw-intro");
+    if(!intro||intro.dataset.mArmed)return;
+    intro.dataset.mArmed="1";
+    if(io){io.disconnect();io=null}
+    started=false;
+
+    const h=intro.querySelector(".pw-h");
+    if(h)splitTitle(h);
+
+    const targets=Array.from(intro.children);
+    const screen=scroll.querySelector(".pw-screen");
+    if(screen)targets.push(screen);
+    const specs=intro.querySelector(".pw-specs");
+    if(specs)specs.querySelectorAll(".pw-spec").forEach((r,k)=>r.style.setProperty("--si",k));
+    targets.forEach(el=>el.classList.add("m-r"));
+
+    if(!("IntersectionObserver" in window)){targets.forEach(el=>el.classList.add("m-in"));return}
+
+    io=new IntersectionObserver(entries=>{
+      const seen=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);
+      /* first batch starts as the page fades in; later batches (scrolling) start immediately */
+      const base=started?0:.14,gap=started?.07:.1;
+      seen.forEach((e,k)=>{
+        io.unobserve(e.target);
+        e.target.style.setProperty("--md",(base+k*gap).toFixed(2)+"s");
+        e.target.classList.add("m-in");
+      });
+      started=true;
+    },{root:scroll,threshold:.12,rootMargin:"0px 0px -6% 0px"});
+    targets.forEach(el=>io.observe(el));
+  }
+
+  new MutationObserver(arm).observe(scroll,{childList:true});
+})();
+</script>
